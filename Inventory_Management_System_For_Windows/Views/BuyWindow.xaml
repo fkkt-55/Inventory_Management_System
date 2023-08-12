@@ -1,0 +1,48 @@
+﻿<Window x:Class="Inventory_Management_System_For_Windows.BuyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="Inventory_Management_System_For_Windows"
+        xmlns:control="clr-namespace:Inventory_Management_System_For_Windows.Widgets"
+        mc:Ignorable="d"
+        Title="新增进货" 
+        Height="300" 
+        Width="400" >
+    <Grid Margin="20">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Width="120" VerticalAlignment="Center">产品名称:</TextBlock>
+                <TextBox Width="200" x:Name="Text_ProductName"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Width="120" VerticalAlignment="Center">供货商:</TextBlock>
+                <TextBox Width="200" x:Name="Text_From"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Width="120" VerticalAlignment="Center">日期:</TextBlock>
+                <DatePicker Width="200" x:Name="Text_Date"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Width="120" VerticalAlignment="Center">数量:</TextBlock>
+                <control:EditText Width="200" x:Name="Text_Count"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Width="120" VerticalAlignment="Center">单价:</TextBlock>
+                <control:EditText Width="200" x:Name="Text_Price"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Width="120" VerticalAlignment="Center">合计价格:</TextBlock>
+                <TextBlock Width="200" x:Name="Text_AllPrice">0</TextBlock>
+            </StackPanel>
+
+            <Button Content="保存" Width="100" Margin="0,25,0,0" Click="SaveButton_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

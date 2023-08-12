@@ -23,6 +23,11 @@ namespace Inventory_Management_System_For_Windows
         public MainWindow()
         {
             InitializeComponent();
+#if DEBUG
+            BuyWindow buyWindow = BuyWindow.GetInstance();
+            buyWindow.Show();
+            Close();
+#endif
         }
 
         private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
@@ -32,16 +37,16 @@ namespace Inventory_Management_System_For_Windows
 
         private void MenuItem_Buy_Click(object sender, RoutedEventArgs e)
         {
-            BuyWindow buyWindow = new BuyWindow();
+            BuyWindow buyWindow = BuyWindow.GetInstance();
             buyWindow.Show();
-            this.Close();
+            Close();
         }
 
         private void MenuItem_Sell_Click(object sender, RoutedEventArgs e)
         {
-            SellWindow sellWindow = new SellWindow();
+            SellWindow sellWindow = new();
             sellWindow.Show();
-            //this.Close();
+            Close();
         }
     }
 
